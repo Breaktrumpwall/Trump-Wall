@@ -22,15 +22,38 @@
     		game.load.image('block4', './images/block4.png');
     		game.load.image('block5', './images/block5.png');
     		game.load.image('paddle', './images/paddle1.png');
+		game.load.image('ball1', './images/ball1.png');
+
+		#need an image for paddle
+
+		#need an image for end points for paddle
 	 }
 	 
 	 function create(){
 	 	var bg = game.add.sprite(0, 0, 'background');
+
+		#create a ball
+
+		#create a wall with bricks
+
+		#create a paddle
+
+		#create two end points of paddle at left bottom and right bottom of screen
 	 }
 	 
 	 function update(){
+
+		
+		update the location of ball, 
+			each time move the ball to the next position						if(ball hit wall)										break brick or bounce back							if(ball hit screen edge)									bounce
+			if(ball hit paddle)										if(hit at edge of paddle) bounce 60 degree or 120 angle
+		update the location of paddle
+			if(user hit right arrow)									move right until the end
+			if(user hit left arrow)										move left until the end
+
 	 
 	 }
+
 	</script>
 
 
