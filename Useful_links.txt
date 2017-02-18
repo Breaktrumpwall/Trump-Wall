@@ -1,3 +1,6 @@
 
 Phaser 2.6.2 API Doc: https://phaser.io/docs/2.6.2/index
 Phaser Example breakout: https://github.com/photonstorm/phaser-examples/blob/master/examples/games/breakout.js
+
+
+Ying's email: wang975@wisc.edu
