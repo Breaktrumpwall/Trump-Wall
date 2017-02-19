@@ -25,47 +25,20 @@
 		game.load.image('ball', './images/ball.png');
 	 }
 	 
-	var lives;
-	var livesText;
-	var ballOnPaddle = true;
 	var weapon;
 	var paddle;
 	var leftKey;
 	var rightKey;
-	var bricks;
-	var brick;
 	 function create(){
-		
 	 	var bg = game.add.sprite(0, 0, 'background');
-		paddle = game.add.sprite(400, 590, 'paddle1');
+		paddle = game.add.sprite(0, 590, 'paddle1');
 		weapon = game.add.sprite(30, 30, 'ball');
- 		game.physics.enable(weapon, Phaser.Physics.ARCADE);
-		weapon.body.collideWorldBounds = true;
-		weapon.body.bounce.set(1);
-		weapon.events.onOutOfBounds.add(ballLost, this);
-
 		game.physics.enable(paddle, Phaser.Physics.ARCADE);
+		game.physics.arcade.enable(paddle);
 		paddle.body.collideWorldBounds = true;
     		paddle.body.bounce.set(1);
    		paddle.body.immovable = true;
-
-		//add a wall
-		var ystart = 250;
-		bricks = game.add.group();
-		bricks.enableBody = true;
-    		bricks.physicsBodyType = Phaser.Physics.ARCADE;
-		for (var i = 0; i < 11; i++) {
-			brick = bricks.create(15 + 70 * i, ystart, 'block1');
-			brick = bricks.create(15 + 70 * i, ystart + 21 * 1, 'block2');
-			brick = bricks.create(15 + 70 * i, ystart + 21 * 2, 'block3');
-			brick = bricks.create(15 + 70 * i, ystart + 21 * 3, 'block4');
-			brick = bricks.create(15 + 70 * i, ystart + 21 * 4, 'block5');
-			brick.body.bounce.set(1);
-           		brick.body.immovable = true;		
-		}
-
-		livesText = game.add.text(0, 10, '100 lives left', { font: "20px Arial", fill: "#ffffff", align: "left" });
-
+		wall = game.add.tileSprite(0, 200, 800, 300, 'block3');
   		leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     		rightKey = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 	 }
@@ -77,20 +50,8 @@
 		if(leftKey.isDown) {
 			paddle.x = paddle.x - 10;
 		}
-		if (ballOnPaddle)
-   		 {
-     		   weapon.body.x = paddle.x;
-   		 }
 	 
 	 }
-
-	function ballLost () {
-	
-   		 lives--;
-   		 livesText.text = 'lives: ' + lives;
-	}
-	
-
 	</script>
 
 
