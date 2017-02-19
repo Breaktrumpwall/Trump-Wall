@@ -28,6 +28,8 @@
 	 
 	var weapon;
 	var paddle;
+	var leftKey;
+	var rightKey;
 
 	 function create(){
 	 	var bg = game.add.sprite(0, 0, 'background');
@@ -39,14 +41,18 @@
 
 		wall = game.add.tileSprite(0, 200, 800, 300, 'block3');
 
+  		leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+    		rightKey = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+
 
 	 }
 	 
 	 function update(){
-		if(Phaser.Key.isDown()) {
-		paddle.body.velocity.set(5);
-		} else [
-		paddle.body.velocity.set(0);
+		if(rightKey.isDown) {
+			paddle.x = paddle.x + 10;
+		}
+		if(leftKey.isDown) {
+			paddle.x = paddle.x - 10;
 		}
 	 
 	 }
