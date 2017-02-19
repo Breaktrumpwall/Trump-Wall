@@ -4,5 +4,7 @@ Phaser Example breakout: https://github.com/photonstorm/phaser-examples/blob/mas
 Phaser Project: https://github.com/amcolash/OneNightMinesweeper/blob/master/js/index.js
 function -- Phaser.Physics.Arcade.collide: https://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.html#collide
 Free Images: http://game-icons.net
+Tutorials： https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_breakout_game_Phaser
+
 
 Ying's email: wang975@wisc.edu
