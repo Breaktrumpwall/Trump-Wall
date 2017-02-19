@@ -34,10 +34,15 @@
 	 function create(){
 	 	var bg = game.add.sprite(0, 0, 'background');
 		paddle = game.add.sprite(0, 590, 'paddle1');
+
+
 		weapon = game.add.sprite(30, 30, 'ball');
 
 		game.physics.enable(paddle, Phaser.Physics.ARCADE);
 		game.physics.arcade.enable(paddle);
+		paddle.body.collideWorldBounds = true;
+    		paddle.body.bounce.set(1);
+   		paddle.body.immovable = true;
 
 		wall = game.add.tileSprite(0, 200, 800, 300, 'block3');
 
