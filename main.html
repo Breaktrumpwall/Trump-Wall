@@ -24,32 +24,33 @@
     		game.load.image('paddle1', './images/paddle1.png');
 		game.load.image('ball', './images/ball.png');
 	 }
-
 	 
 	var weapon;
 	var paddle;
 	var leftKey;
 	var rightKey;
-
+	var bricks;
 	 function create(){
 	 	var bg = game.add.sprite(0, 0, 'background');
 		paddle = game.add.sprite(0, 590, 'paddle1');
-
-
 		weapon = game.add.sprite(30, 30, 'ball');
-
 		game.physics.enable(paddle, Phaser.Physics.ARCADE);
-		game.physics.arcade.enable(paddle);
 		paddle.body.collideWorldBounds = true;
     		paddle.body.bounce.set(1);
    		paddle.body.immovable = true;
 
-		wall = game.add.tileSprite(0, 200, 800, 300, 'block3');
-
+		//add a wall
+		bricks = game.add.group();
+		for (var i = 0; i < 11; i++) {
+			bricks.create(15 + 70 * i, 200, 'block1');
+			bricks.create(15 + 70 * i, 200 + 21 * 1, 'block2');
+			bricks.create(15 + 70 * i, 200 + 21 * 2, 'block3');
+			bricks.create(15 + 70 * i, 200 + 21 * 3, 'block4');
+			bricks.create(15 + 70 * i, 200 + 21 * 4, 'block5');
+		}
+		
   		leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     		rightKey = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
-
-
 	 }
 	 
 	 function update(){
@@ -61,7 +62,6 @@
 		}
 	 
 	 }
-
 	</script>
 
 
